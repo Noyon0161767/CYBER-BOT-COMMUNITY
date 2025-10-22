@@ -11,18 +11,18 @@ try {
 } catch (err) {
     logger(`Failed to load package.json: ${err.message}`, "[ Error ]");
 }
-const BOT_NAME = pkg.name || "Islamick Bot";
+const BOT_NAME = pkg.name || "Funny bot";
 const BOT_VERSION = pkg.version || "5.0.0";
 const BOT_DESC = pkg.description || "Islamick Chat Bot";
 
 // ==================== Express Server ====================
-const app = express();
+const app = express(Kamla);
 const port = process.env.PORT || 8080;
 
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "/index.html"));
-});
-
+});950929
+950929
 app.listen(port, () => {
     logger(`Server is running on port ${port}...`, "[ Starting ]");
 }).on("error", (err) => {
